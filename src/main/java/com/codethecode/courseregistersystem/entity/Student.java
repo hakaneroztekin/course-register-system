@@ -1,4 +1,4 @@
-package com.codethecode.CourseRegisterSystem.entity;
+package com.codethecode.courseregistersystem.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -35,5 +35,4 @@ public class Student {
 
     @Column(name="grade")//notları değil, kaçıncı sınıf olduğu.
     private int grade;  //hoca öğrencinin istediği dersin hangi sınıf dersi olduğu bu değerden anlayacak
-
 }
