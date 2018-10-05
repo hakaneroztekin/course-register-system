@@ -1,7 +1,8 @@
-package com.codethecode.courseregistersystem.entity;
-
-import javax.persistence.Entity;
-
-@Entity
-public class Course {
-}
+//package com.codethecode.courseregistersystem.entity;
+//
+//import javax.persistence.*;
+//
+//@Entity
+//@Table(name="course")
+//public class Course {
+//}
