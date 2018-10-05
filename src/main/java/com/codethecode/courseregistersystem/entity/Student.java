@@ -27,10 +27,10 @@ public class Student {
     @Column(name="gender")
     private String gender;
 
-    @Column(name="Days")
-    private int Days;
+    @Column(name="days")
+    private int days;
 
-    @Column(name="Courses")
-    private String Courses;
+    @Column(name="courses")
+    private String courses;
 
 }
