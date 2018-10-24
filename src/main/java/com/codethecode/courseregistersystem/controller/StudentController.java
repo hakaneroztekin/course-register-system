@@ -29,7 +29,7 @@ public class StudentController {
     StudentRepository studentRepository;
 
 
-    @GetMapping(value = "/teacher/getTeacherList")
+    @GetMapping(value = "/getTeacherList")
     public ResponseEntity getTeacherList() {
         Iterable<Teacher> teacherDaoList = teacherRepository.findAll();
         List<TeacherDto> teacherDtoList = new ArrayList<>();
