@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 @RequestMapping(value="/student")
@@ -30,7 +31,7 @@ public class StudentController {
 
     @GetMapping(value = "/teacher/getTeacherList")
     public ResponseEntity getTeacherList() {
-        List<Teacher> teacherDaoList = teacherRepository.findAll();
+        Iterable<Teacher> teacherDaoList = teacherRepository.findAll();
         List<TeacherDto> teacherDtoList = new ArrayList<>();
         for(Teacher teacher : teacherDaoList){
             TeacherDto teacherDto = new TeacherDto();

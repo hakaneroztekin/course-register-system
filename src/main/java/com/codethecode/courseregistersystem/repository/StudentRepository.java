@@ -1,13 +1,12 @@
 package com.codethecode.courseregistersystem.repository;
 
+import org.springframework.data.repository.CrudRepository;
 import com.codethecode.courseregistersystem.entity.Student;
-import com.codethecode.courseregistersystem.entity.Teacher;
-import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import java.util.List;
+import java.util.Optional;
 
 @Repository
-public interface StudentRepository extends JpaRepository<Student, Long> {
-    List<Student> findByStudentId(Long id);
+public interface StudentRepository extends CrudRepository<Student, Long> {
+    Optional<Student> findById(Long id);
 }
