@@ -1,8 +1,11 @@
 package com.codethecode.courseregistersystem.controller;
 
+import com.codethecode.courseregistersystem.dto.CourseDto;
 import com.codethecode.courseregistersystem.dto.StudentDto;
 import com.codethecode.courseregistersystem.dto.TeacherDto;
+import com.codethecode.courseregistersystem.entity.Course;
 import com.codethecode.courseregistersystem.entity.Teacher;
+import com.codethecode.courseregistersystem.repository.CourseRepository;
 import com.codethecode.courseregistersystem.repository.StudentRepository;
 import com.codethecode.courseregistersystem.repository.TeacherRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +26,9 @@ public class AdminController {
 
     @Autowired
     StudentRepository studentRepository;
+
+    @Autowired
+    CourseRepository courseRepository;
 
     @PostMapping(value = "/teacher/add")
     public ResponseEntity addTeacher(@RequestParam("teacherDto") TeacherDto teacherDto) {
@@ -76,17 +82,17 @@ public class AdminController {
 
     @PostMapping(value = "/course/add")
     public ResponseEntity addCourse(@RequestParam("courseDto") CourseDto courseDto) {
-        Teacher newTeacher = new Teacher();
-        newTeacher.setName(teacherDto.getName());
-        newTeacher.setSurname(teacherDto.getSurname());
-        newTeacher.setBranch(teacherDto.getBranch());
-        newTeacher.setBalance(teacherDto.getBalance());
-        newTeacher.setGender(teacherDto.getGender());
-        newTeacher.setCost(teacherDto.getCost());
+        Course newCourse = new Course();
+        newCourse.setName(courseDto.getName());
+        newCourse.setBranch(courseDto.getBranch());
+        newCourse.setCost(courseDto.getCost());
+        newCourse.setDay(courseDto.getDay());
+//        newCourse.setStudentId();
+//        newCourse.setTeacherId();
 
-        teacherRepository.save(newTeacher);
+        courseRepository.save(newCourse);
 
-        return new ResponseEntity<String>("New teacher added", HttpStatus.ACCEPTED);
+        return new ResponseEntity<String>("New course added", HttpStatus.ACCEPTED);
     }
 
 
