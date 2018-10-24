@@ -95,5 +95,10 @@ public class AdminController {
         return new ResponseEntity<String>("New course added", HttpStatus.ACCEPTED);
     }
 
+    @PostMapping(value = "/course/delete/{id}")
+    public ResponseEntity deleteCourse(@PathVariable Long id) {
+        courseRepository.deleteById(id);
 
+        return new ResponseEntity<String>("Course deleted", HttpStatus.ACCEPTED);
+    }
 }
