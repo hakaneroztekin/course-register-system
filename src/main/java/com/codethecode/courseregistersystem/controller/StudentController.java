@@ -1,7 +1,10 @@
 package com.codethecode.courseregistersystem.controller;
 
+import com.codethecode.courseregistersystem.dto.CourseDto;
 import com.codethecode.courseregistersystem.dto.TeacherDto;
+import com.codethecode.courseregistersystem.entity.Course;
 import com.codethecode.courseregistersystem.entity.Teacher;
+import com.codethecode.courseregistersystem.repository.CourseRepository;
 import com.codethecode.courseregistersystem.repository.StudentRepository;
 import com.codethecode.courseregistersystem.repository.TeacherRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +31,8 @@ public class StudentController {
     @Autowired
     StudentRepository studentRepository;
 
+    @Autowired
+    CourseRepository courseRepository;
 
     @GetMapping(value = "/getTeacherList")
     public ResponseEntity getTeacherList() {
@@ -47,5 +52,20 @@ public class StudentController {
         return new ResponseEntity<>((ArrayList) teacherDtoList, HttpStatus.ACCEPTED);
     }
 
+    @GetMapping(value = "/getCourseList")
+    public ResponseEntity getCourseList() {
+        Iterable<Course> courseDaoList = courseRepository.findAll();
+        List<CourseDto> courseDtoList = new ArrayList<>();
+        for(Course course: courseDaoList){
+            CourseDto courseDto = new CourseDto();
+            courseDto.setName(course.getName());
+            courseDto.setBranch(course.getBranch());
+            courseDto.setCost(course.getCost());
+            courseDto.setDay(course.getDay());
+            courseDtoList.add(courseDto);
+        }
+
+        return new ResponseEntity<>((ArrayList) courseDtoList, HttpStatus.ACCEPTED);
+    }
 
 }
