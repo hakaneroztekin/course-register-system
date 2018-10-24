@@ -17,35 +17,26 @@ public class Course {
     @Column(name = "id")
     private Long id;
 
+    @Column(name = "name")
+    private String name;
+
     @Column(name = "branch")
     private String branch;
 
-    @Column(name = "date")
-    private String date;
+    @Column(name = "day")
+    private String day;
 
-    @Column(name = "beginningTime")
-    private String beginningTime;
+    //@OneToOne vb relation olacak
+    @Column(name = "teacherId")
+    private String teacherId;
 
-    @Column(name = "period") //dersin kaç saat süreceği
-    private String period;
+    //@OneToOne vb relation olacak
+    @Column(name = "studentId")
+    private String studentId;
 
-    @Column(name = "teacherName") //Dersi verecek hocanın adı
-    private String teacherName;
+    @Column(name = "cost")
+    private String cost;
 
-    @Column(name = "teacherSurname")
-    private String teacherSurname;
-
-    @Column(name = "studentName") //Dersi alacak öğrencinin adı
-    private String studentName;
-
-    @Column(name = "studentSurname")
-    private String studentSurname;
-
-    @Column(name = "teacherID")// ID ler öğrenci ve öğretmenle dersin bağlantısını göstermek için.
-    private String teacherID;  // Ad soyad da var ama, aynı isimde öğrenci ve öğretmenler olabilir diye ID de ekledim.
-
-    @Column(name = "studentID")
-    private String studentID;
 
 }
 

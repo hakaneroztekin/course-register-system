@@ -74,4 +74,20 @@ public class AdminController {
                                 + " deleted", HttpStatus.ACCEPTED);
     }
 
+    @PostMapping(value = "/course/add")
+    public ResponseEntity addCourse(@RequestParam("courseDto") CourseDto courseDto) {
+        Teacher newTeacher = new Teacher();
+        newTeacher.setName(teacherDto.getName());
+        newTeacher.setSurname(teacherDto.getSurname());
+        newTeacher.setBranch(teacherDto.getBranch());
+        newTeacher.setBalance(teacherDto.getBalance());
+        newTeacher.setGender(teacherDto.getGender());
+        newTeacher.setCost(teacherDto.getCost());
+
+        teacherRepository.save(newTeacher);
+
+        return new ResponseEntity<String>("New teacher added", HttpStatus.ACCEPTED);
+    }
+
+
 }
