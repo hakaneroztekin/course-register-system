@@ -6,6 +6,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
+
 @Entity
 @Data
 @AllArgsConstructor
@@ -25,6 +27,9 @@ public class Teacher{
 
     @Column(name="gender")
     private String gender;
+
+    @Column(name="busy_days")
+    private ArrayList<String> busyDays;
 
     @Column(name="branch")
     private String branch;

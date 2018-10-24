@@ -6,7 +6,8 @@ import java.util.ArrayList;
 
 @Data
 public class ScheduleDto {
-    private ArrayList<String> busyDays;
     private String name;
+    private String surname;
     private Boolean isStudent;
+    private ArrayList<String> busyDays;
 }
