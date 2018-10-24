@@ -1,8 +1,10 @@
 package com.codethecode.courseregistersystem.controller;
 
 import com.codethecode.courseregistersystem.dto.CourseDto;
+import com.codethecode.courseregistersystem.dto.ScheduleDto;
 import com.codethecode.courseregistersystem.dto.TeacherDto;
 import com.codethecode.courseregistersystem.entity.Course;
+import com.codethecode.courseregistersystem.entity.Student;
 import com.codethecode.courseregistersystem.entity.Teacher;
 import com.codethecode.courseregistersystem.repository.CourseRepository;
 import com.codethecode.courseregistersystem.repository.StudentRepository;
@@ -11,10 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -66,6 +65,17 @@ public class StudentController {
         }
 
         return new ResponseEntity<>((ArrayList) courseDtoList, HttpStatus.ACCEPTED);
+    }
+
+    @GetMapping(value = "/getSelfSchedule/{id}")
+    public ResponseEntity getSelfSchedule(@PathVariable Long id) {
+        Optional<Student> student = studentRepository.findById(id);
+        ScheduleDto studentSchedule = new ScheduleDto();
+        studentSchedule.setName(student.get().getName());
+        studentSchedule.setBusyDays(student.get().getBusyDays());
+        studentSchedule.setIsStudent(true);
+
+        return new ResponseEntity<>(studentSchedule, HttpStatus.ACCEPTED);
     }
 
 }

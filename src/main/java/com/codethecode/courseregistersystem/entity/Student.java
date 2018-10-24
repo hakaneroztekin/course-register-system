@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 
 @Entity
 @AllArgsConstructor
@@ -27,8 +28,8 @@ public class Student {
     @Column(name="gender")
     private String gender;
 
-    @Column(name="days")
-    private int days;
+    @Column(name="busy_days")
+    private ArrayList<String> busyDays;
 
     @Column(name="courses")
     private String courses;
