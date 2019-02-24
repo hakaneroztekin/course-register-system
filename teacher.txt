@@ -1,0 +1,28 @@
+{
+  "balance": 20,
+  "branch": "Computer Science",
+  "cost": 50,
+  "gender": "Male",
+  "id": 0,
+  "name": "Mehmet",
+  "surname": "Akay"
+}
+
+{
+  "balance": 60,
+  "branch": "Biology",
+  "cost": 30,
+  "gender": "Male",
+  "id": 0,
+  "name": "Halim",
+  "surname": "Aral"
+}
+
+{
+  "balance": 20,
+  "branch": "Computer Science",
+  "cost": 35,
+  "gender": "Male",
+  "name": "Cansev",
+  "surname": "Arat"
+}

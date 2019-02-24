@@ -1,0 +1,20 @@
+{
+  "branch": "Computer Science",
+  "cost": 20,
+  "day": "Tuesday",
+  "name": "Software Engineering"
+}
+
+{
+  "branch": "Biology",
+  "cost": 30,
+  "day": "Friday",
+  "name": "Genetics"
+}
+
+{
+  "branch": "Computer Science",
+  "cost": 30,
+  "day": "Friday",
+  "name": "Object Oriented Programming"
+}
