@@ -4,7 +4,7 @@ Course Register System (CRS) is a **Java based Web project** which is developed 
 The project is developed as an assignment for Software Engineering course in Istanbul Technical University. The agile principles are applied.
 
 ## Technology Stack
-Java 8, Spring Boot, Spring MVC, Hibernate, MySQL, IntelliJ, Swagger UI, Jira, Confluence, Bitbucket, Github, Sourcetree
+Java 8, Spring Boot, Spring MVC, Hibernate, MySQL, RESTful Web Services, IntelliJ, Swagger UI, Jira, Confluence, Bitbucket, Github, Sourcetree
 
 ## Developers
 Furkan Çakır [@furkan1080]( https://github.com/furkan1080 ) 
